@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "market-regime-detection"
+version = "1.0.0"
+description = "Chronological market regime evaluation with causal HMM filtering"
+requires-python = ">=3.11"
+dependencies = ["numpy", "pandas", "scipy", "scikit-learn", "hmmlearn", "matplotlib", "joblib"]
+
+[project.optional-dependencies]
+notebook = ["jupyterlab", "nbformat", "nbclient", "nbconvert", "ipykernel"]
+test = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
