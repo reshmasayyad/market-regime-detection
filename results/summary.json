@@ -1,0 +1,31 @@
+{
+  "train_period": [
+    "2011-01-03",
+    "2018-12-31"
+  ],
+  "validation_period": [
+    "2019-01-01",
+    "2021-12-31"
+  ],
+  "test_period": [
+    "2022-01-03",
+    "2025-12-31"
+  ],
+  "split_observations": {
+    "train": 1981,
+    "validation": 745,
+    "test": 991
+  },
+  "selected_hmm_states": 4,
+  "selected_kmeans_clusters": 3,
+  "hmm_covariance": "diagonal",
+  "selected_refit_seed": 84,
+  "rule_annualized_volatility_threshold": 0.16224669942419415,
+  "test_hmm_mean_conditional_log_score": -3.5166778238813734,
+  "test_independent_gmm_mean_log_score": -4.521022044264353,
+  "test_hmm_mean_max_filter_probability": 0.9682243480013234,
+  "test_filtered_smoothed_disagreement_share": 0.060544904137235116,
+  "initialization_median_test_ari": 0.7423677093853895,
+  "feature_timing": "available after current daily close",
+  "likelihood_units": "nats per observation in the fixed standardized feature space"
+}

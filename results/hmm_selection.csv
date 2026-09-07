@@ -1,0 +1,3 @@
+states,selected_training_seed,validation_mean_conditional_log_score,independent_gmm_validation_mean_log_score,validation_states_observed,minimum_validation_state_share
+3,42,-6.477329252654689,-7.175581326858665,3,0.20268456375838925
+4,84,-6.251392480981311,-7.66938600779507,4,0.21208053691275167

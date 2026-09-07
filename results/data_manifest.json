@@ -1,0 +1,33 @@
+{
+  "source_path": "market_prices.csv",
+  "input_sha256": "f5d0c1ad47e76235d7c29cb681371c26152d09763c9c1b7f20380e1f560c43c0",
+  "raw_rows": 4072,
+  "rows_after_end_excluded": 0,
+  "union_rows_without_nifty_excluded": 102,
+  "nifty_quote_rows": 3970,
+  "quote_start": "2010-01-04",
+  "quote_end": "2025-12-31",
+  "missing_on_nifty_quote_calendar": {
+    "nifty50": 0,
+    "bank_nifty": 0,
+    "india_vix": 136
+  },
+  "sources": {
+    "indices": "https://www.niftyindices.com/reports/historical-data",
+    "india_vix": "https://www.nseindia.com/reports-indices-historical-vix"
+  },
+  "source_verification": "Local extract attributed by supplied coverage notes; original downloads not independently reverified",
+  "rows_in_analysis_period": 3718,
+  "valid_feature_rows": 3717,
+  "rows_excluded_for_incomplete_features": 1,
+  "excluded_feature_dates": [
+    "2024-03-02"
+  ],
+  "model_features": [
+    "nifty_log_return",
+    "log_volatility_20",
+    "momentum_20",
+    "log_vix"
+  ],
+  "feature_timing": "available after current day's close"
+}
