@@ -24,6 +24,15 @@ def analyze(root,verbose=True):
     progress("Fitting HMM candidates across five initialization seeds...")
     hmm=select_hmm(train,validation,refit)
     progress(f"Selected {hmm['selected_states']} HMM states; refit is frozen through {VALIDATION_END}.")
+    result=evaluate_models(root,quotes,data_audit,features,feature_audit,train,validation,test,km,hmm)
+    progress("Saved held-out diagnostics, seven figures, daily local assignments, and fitted HMM artifact.")
+    return result
+
+
+def evaluate_models(root,quotes,data_audit,features,feature_audit,train,validation,test,km,hmm):
+    """Evaluate already fitted models; shared by the notebook and CLI workflow."""
+    root=Path(root)
+    refit=features.loc[:VALIDATION_END]
     refit_values=hmm["scaler"].transform(refit[MODEL_FEATURES])
     test_values=hmm["scaler"].transform(test[MODEL_FEATURES])
     refit_probability,_=filter_hmm(hmm["model"],refit_values)
@@ -80,5 +89,4 @@ def analyze(root,verbose=True):
             "comparison":comparisons,"yearly_scores":yearly,"robustness":robustness,"summary":summary,"timeline":timeline}
     save_results(root,result)
     make_figures(root,result)
-    progress("Saved held-out diagnostics, seven figures, daily local assignments, and fitted HMM artifact.")
     return result
